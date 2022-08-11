@@ -1,4 +1,5 @@
 const selectionElements = [document.getElementsByClassName("food-items-1"),document.getElementsByClassName("food-items-2"), document.getElementsByClassName("food-items-3")];
+
 function requestFood()
 {
     let requestButton = document.getElementsById("request");
