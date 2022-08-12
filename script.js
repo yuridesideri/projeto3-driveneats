@@ -32,10 +32,12 @@ function requestFood()
     if (check === 3)
     {
         requestButton.classList.add("button-requester");
+        requestButton.innerHTML = "Fechar Pedido";
     }
     else 
     {
         requestButton.classList.remove("button-requester");
+        requestButton.innerHTML = "Selecione os 3 itens para fechar o pedido";
     }
 }
 
@@ -76,3 +78,34 @@ function selectElement(element)
     }
 }
 
+function redirectWhatsapp()
+{
+        let selectionData = document.querySelectorAll(".selected .item-title");
+        let dish = selectionData[0].textContent;
+        let drink = selectionData[1].textContent;
+        let desert = selectionData[2].textContent;
+        let price = 0.00;
+        let tmpPriceArray;
+        for (let i = 0; i < selectionData.length; i++)
+        {
+            tmpPriceArray = document.querySelectorAll(".selected .item-price")[i].textContent.split(' ');
+            price = price + parseFloat(parseFloat(tmpPriceArray[1].replace(",", ".")).toFixed(2));
+        }
+
+        console.log(price);
+        dish = "- Prato: " + dish;
+        drink = "- Bebida: " + drink;
+        desert = "- Sobremesa: " + desert;
+        price = "Total: R$ " + price.toFixed(2);
+
+        let text = ["Olá, gostaria de fazer o pedido:",dish, drink, desert, price];
+        let finalText = "";
+
+        for (let i = 0; i < text.length; i++)
+        {
+            finalText = finalText + text[i] + '%0A';
+        }
+        console.log(finalText);
+        let url = 'https://wa.me/5564981214035?text=' + finalText;
+        location.href= url;
+}
