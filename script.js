@@ -47,6 +47,7 @@ function resetSelection(p)
     for (let i = 0; i < selectionElements[p].length; i++)
     {
         selectionElements[p][i].classList.remove("selected");
+        selectionElements[p][i].querySelector(".selected-image-hide").classList.remove("selected-image");
         selectionElements[p][i].style.boxShadow = "0px 0px 10px -4px #00000040";
     }
 }
@@ -68,6 +69,7 @@ function selectElement(element)
                 if (tmp !== true)
                 {
                     element.classList.add("selected");
+                    element.querySelector(".selected-image-hide").classList.add("selected-image");
                     selectionElements[i][j].style.boxShadow = "0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";    
                     tmp = false;
                 }

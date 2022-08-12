@@ -1,5 +1,13 @@
+@-ms-viewport { width: device-width; }
+
+html{
+    width: 100vw;
+}
+
 body{
     background-color: #E5E5E5;
+    width: 100%;
+    
 }
 
 header{
@@ -10,7 +18,8 @@ header{
     box-sizing: border-box;
     margin-bottom: 30px;
     position: fixed;
-    width: 100vw;
+    top: 0;
+    width: 100%;
     z-index: 1;
 }
 
@@ -50,7 +59,6 @@ div>p:first-child{
     font-weight: 400;
     line-height: 32.28px;
     color: #333333;
-    width: 376px;
     margin-left: 19px;
     margin-bottom: 10px;
 }
@@ -63,7 +71,6 @@ div>p:first-child{
     box-sizing: border-box;
     padding-left: 11px;
     padding-right: 11px;
-
 }
 
 .item-scroller::-webkit-scrollbar{
@@ -88,6 +95,7 @@ div>p:first-child{
     justify-content: space-between;
     box-sizing: border-box;
     padding: 18px 14px 18px 14px;
+    position: relative;
 
 }
 
@@ -134,9 +142,23 @@ button{
     font-weight: 400;
     line-height: 23px;
     text-align: center;
+    box-sizing: border-box;
+}
+
+
+.selected-image-hide{
+    display: none;
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    
 }
 
 /*Js Classes*/
+
+.selected-image{
+    display: block;
+}
 
 .button-requester{
     background-color:  #32B72F; 
