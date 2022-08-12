@@ -135,3 +135,13 @@ button{
     line-height: 23px;
     text-align: center;
 }
+
+/*Js Classes*/
+
+.button-requester{
+    background-color:  #32B72F; 
+}
+
+.button-requester:active{
+    background-color:  #65c663; 
+}
